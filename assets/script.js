@@ -122,90 +122,117 @@ $(document).ready(function(){
             $('#lyrics p:nth-child(1)').css({'color': 'red'});
             $('#lyrics p:nth-child(1)').css({'font-size': '20px'});
         } else if(currentTime >= 8.5 && currentTime < 12.5){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(2)').css({'color': 'red'});
             $('#lyrics p:nth-child(2)').css({'font-size': '20px'});
         } else if(currentTime >= 12.7 && currentTime < 16.5){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(3)').css({'color': 'red'});
             $('#lyrics p:nth-child(3)').css({'font-size': '20px'});
         } else if(currentTime >= 17 && currentTime < 20.8){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(4)').css({'color': 'red'});
             $('#lyrics p:nth-child(4)').css({'font-size': '20px'});
         } else if(currentTime >= 21 && currentTime < 24.7){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(5)').css({'color': 'red'});
             $('#lyrics p:nth-child(5)').css({'font-size': '20px'});
         } else if(currentTime >= 25 && currentTime < 28.8){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(6)').css({'color': 'red'});
             $('#lyrics p:nth-child(6)').css({'font-size': '20px'});
         } else if(currentTime >= 29 && currentTime < 32.9){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(7)').css({'color': 'red'});
             $('#lyrics p:nth-child(7)').css({'font-size': '20px'});
         } else if(currentTime >= 33.2 && currentTime < 37.4){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(8)').css({'color': 'red'});
             $('#lyrics p:nth-child(8)').css({'font-size': '20px'});
         } else if(currentTime >= 37.6 && currentTime < 40.3){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(9)').css({'color': 'red'});
             $('#lyrics p:nth-child(9)').css({'font-size': '20px'});
         } else if(currentTime >= 40.5 && currentTime < 41.75){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(10)').css({'color': 'red'});
             $('#lyrics p:nth-child(10)').css({'font-size': '20px'});
         } else if(currentTime >= 41.9 && currentTime < 45.7){
             $('#lyrics p:nth-child(11)').css({'color': 'red'});
             $('#lyrics p:nth-child(11)').css({'font-size': '20px'});
         } else if(currentTime >= 46 && currentTime < 49.7){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(12)').css({'color': 'red'});
             $('#lyrics p:nth-child(12)').css({'font-size': '20px'});
         } else if(currentTime >= 50 && currentTime < 54.3){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(13)').css({'color': 'red'});
             $('#lyrics p:nth-child(13)').css({'font-size': '20px'});
         } else if(currentTime >= 54.5 && currentTime < 60.5){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(14)').css({'color': 'red'});
             $('#lyrics p:nth-child(14)').css({'font-size': '20px'});
         } else if(currentTime >= 60.8 && currentTime < 67.5){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(15)').css({'color': 'red'});
             $('#lyrics p:nth-child(15)').css({'font-size': '20px'});
         } else if(currentTime >= 67.9 && currentTime < 71.7){
             $('#lyrics p:nth-child(16)').css({'color': 'red'});
             $('#lyrics p:nth-child(16)').css({'font-size': '20px'});
         } else if(currentTime >= 72 && currentTime < 75.7){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(17)').css({'color': 'red'});
             $('#lyrics p:nth-child(17)').css({'font-size': '20px'});
         } else if(currentTime >= 76 && currentTime < 79.8){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(18)').css({'color': 'red'});
             $('#lyrics p:nth-child(18)').css({'font-size': '20px'});
         } else if(currentTime >= 80.2 && currentTime < 84.8){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(19)').css({'color': 'red'});
             $('#lyrics p:nth-child(19)').css({'font-size': '20px'});
         } else if(currentTime >= 85 && currentTime < 88.8){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(20)').css({'color': 'red'});
             $('#lyrics p:nth-child(20)').css({'font-size': '20px'});
         } else if(currentTime >= 89.1 && currentTime < 91.9){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(21)').css({'color': 'red'});
             $('#lyrics p:nth-child(21)').css({'font-size': '20px'});
         } else if(currentTime >= 92.4 && currentTime < 97.2){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(22)').css({'color': 'red'});
             $('#lyrics p:nth-child(22)').css({'font-size': '20px'});
         } else if(currentTime >= 97.4 && currentTime < 99.8){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(23)').css({'color': 'red'});
             $('#lyrics p:nth-child(23)').css({'font-size': '20px'});
         } else if(currentTime >= 100 && currentTime < 100.9){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(24)').css({'color': 'red'});
             $('#lyrics p:nth-child(24)').css({'font-size': '20px'});
         } else if(currentTime >= 101 && currentTime < 105.3){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(25)').css({'color': 'red'});
             $('#lyrics p:nth-child(25)').css({'font-size': '20px'});
         } else if(currentTime >= 105.5 && currentTime < 109.3){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(26)').css({'color': 'red'});
             $('#lyrics p:nth-child(26)').css({'font-size': '20px'});
         } else if(currentTime >= 109.5 && currentTime < 113.8){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(27)').css({'color': 'red'});
             $('#lyrics p:nth-child(27)').css({'font-size': '20px'});
         } else if(currentTime >= 114 && currentTime < 117.8){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(28)').css({'color': 'red'});
             $('#lyrics p:nth-child(28)').css({'font-size': '20px'});
         } else if(currentTime >= 118 && currentTime < 131){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(29)').css({'color': 'red'});
             $('#lyrics p:nth-child(29)').css({'font-size': '20px'});
         } else if(currentTime >= 131.5 && currentTime < 133){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(30)').css({'color': 'black'});
             $('#lyrics p:nth-child(30)').css({'font-size': '20px'});
         } else {
