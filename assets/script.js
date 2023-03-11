@@ -158,6 +158,7 @@ $(document).ready(function(){
             $('#lyrics p:nth-child(10)').css({'color': 'red'});
             $('#lyrics p:nth-child(10)').css({'font-size': '20px'});
         } else if(currentTime >= 41.9 && currentTime < 45.7){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(11)').css({'color': 'red'});
             $('#lyrics p:nth-child(11)').css({'font-size': '20px'});
         } else if(currentTime >= 46 && currentTime < 49.7){
@@ -177,6 +178,7 @@ $(document).ready(function(){
             $('#lyrics p:nth-child(15)').css({'color': 'red'});
             $('#lyrics p:nth-child(15)').css({'font-size': '20px'});
         } else if(currentTime >= 67.9 && currentTime < 71.7){
+            $('#lyrics').scrollTop(53);
             $('#lyrics p:nth-child(16)').css({'color': 'red'});
             $('#lyrics p:nth-child(16)').css({'font-size': '20px'});
         } else if(currentTime >= 72 && currentTime < 75.7){
