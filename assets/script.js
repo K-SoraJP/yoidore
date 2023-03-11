@@ -122,6 +122,7 @@ $(document).ready(function(){
             $('#lyrics p:nth-child(1)').css({'color': 'red'});
         } else if(currentTime >= 8.5 && currentTime < 12.5){
             $('#lyrics p:nth-child(2)').css({'color': 'red'});
+            $('#lyrics p:nth-child(2)').css({'font-size': '20px'});
         } else if(currentTime >= 12.7 && currentTime < 16.5){
             $('#lyrics p:nth-child(3)').css({'color': 'red'});
         } else if(currentTime >= 17 && currentTime < 20.8){
