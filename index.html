@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ja"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+	<title>Karaoke.Web-β</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="./assets/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery-1.9.1.min.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 5.6.7, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/image-2.png"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="酔いどれ知らず">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body class="u-body u-xl-mode" data-lang="en"><header class="u-black u-clearfix u-header u-valign-top u-header" id="sec-ec4e"><a href="./index2.html" class="u-image u-logo u-image-1" data-image-width="500" data-image-height="500">
+        <img src="images/image-2.png" class="u-logo-image u-logo-image-1">
+      </a><nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+          <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+          </a>
+        </div>
+        <div class="u-custom-menu u-nav-container">
+          <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="Songs.html" style="padding: 10px 20px;">Songs</a>
+</li></ul>
+        </div>
+        <div class="u-custom-menu u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-inner-container-layout u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">Home</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Songs.html">Songs</a>
+</li></ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav></header>
+<body>
+	<div class="container">
+		<h1 id="music">酔いどれ知らず / Kanaria</h1><br>
+		<div class="select-wrapper">
+			<select id="song-select" class="form-control">
+				<option value="" disabled selected hidden>伴奏の種類</option>
+				<option value="song2">通常</option>
+				<option value="song1">ボーカルあり(on-vocal)</option>
+			</select><br>
+		</div>
+		<div id="song-info" hidden>
+            <h4 id="title"></h4>
+            <h7 id="author"></h7>
+        </div>
+		<div id="progress-bar" hidden>
+			<span></span>
+			<div id="time">0:00ㅤ</div>
+		</div>
+		
+		<audio id="audio" class="w-100" controls hidden>
+			<source src="./assets/songs/song.mp3" type="audio/mpeg">
+		</audio><br>
+		<div>
+			<button type="button" class="btn btn-primary btn-play" id="play-btn" hidden>スタート</button>
+			<button type="button" class="btn btn-secondary btn-pause" id="pause-btn" hidden>ストップ</button>
+			<button type="button" class="btn btn-danger btn-stop" id="stop-btn" hidden>演奏中止</button>
+		</div>
+		<div id="lyrics" class="scroll"> <!-- Display your lyrics here --><br><br>
+			-----伴奏の種類を選択してスタートします-----
+		</div>
+	</div> 
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="./assets/script.js"></script>
+</body>
+</html>
