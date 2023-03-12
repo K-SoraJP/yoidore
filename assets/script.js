@@ -45,14 +45,10 @@ function startUserMedia(stream) {
 
 function startRecording(button) {
   recorder && recorder.record();
-  button.disabled = true;
-  button.nextElementSibling.disabled = false;
 }
 
 function stopRecording(button) {
   recorder && recorder.stop();
-  button.disabled = true;
-  button.previousElementSibling.disabled = false;
   div2.removeAttribute("hidden");
   // create WAV download link using audio data blob
   createDownloadLink();
