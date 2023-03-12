@@ -32,7 +32,17 @@ body {
 .scroll{
     height: 280px;
     overflow: auto;
+    /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+    -ms-overflow-style: none;
+    /*Firefoxへの対応*/
+    scrollbar-width: none;
 }
+
+ /*Google Chrome、Safariへの対応*/
+.scroll::-webkit-scrollbar{
+  display: none;
+}
+
 .btn-play {
     background-color: #007bff;
     border-color: #007bff;
