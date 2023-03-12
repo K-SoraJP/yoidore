@@ -120,8 +120,21 @@ window.onload = function init() {
     .then(function(stream) {
       startUserMedia(stream);
     })
-    .catch(function(e) {
+    .catch(function() {
+      alert('マイクへのアクセスを許可して下さい。');
+      getMedia();
   });
+};
+
+function getMedia(){
+  navigator.mediaDevices.getUserMedia({audio: true})
+  .then(function(stream) {
+    startUserMedia(stream);
+  })
+  .catch(function() {
+    alert('マイクへのアクセスを許可して下さい。');
+    getMedia();
+});
 };
 
 playBtn.addEventListener('click', () => {
