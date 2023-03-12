@@ -52,7 +52,7 @@
       </nav></header>
 <body>
 	<div class="container">
-		<h1 id="music">酔いどれ知らず / Kanaria</h1><br>
+		<u><h1 id="music">○酔いどれ知らず / Kanaria○</h1></u><br>
 		<div class="select-wrapper">
 			<select id="song-select" class="form-control">
 				<option value="" disabled selected hidden>伴奏の種類</option>
@@ -64,6 +64,14 @@
             <h4 id="title"></h4>
             <h7 id="author"></h7>
         </div>
+		<h4 id="h4" hidden>★Result★</h4>
+		<div id="score-div" hidden>
+            <u><h4 id="score"></h4></u>
+        </div><br>
+		<div id="div2" hidden>
+			<audio preload="auto" id="audio2" controls></audio><br><br>
+			<button type="button" class="btn btn-primary" id="re-btn">もう一度歌う</button>
+		</div>
 		<div id="progress-bar" hidden>
 			<span></span>
 			<div id="time">0:00ㅤ</div>
@@ -73,15 +81,18 @@
 			<source src="./assets/songs/song.mp3" type="audio/mpeg">
 		</audio><br>
 		<div>
-			<button type="button" class="btn btn-primary btn-play" id="play-btn" hidden>スタート</button>
+			<button type="button" class="btn btn-primary btn-play" id="play-btn" onclick="startRecording(this);" hidden>スタート</button>
 			<button type="button" class="btn btn-secondary btn-pause" id="pause-btn" hidden>ストップ</button>
-			<button type="button" class="btn btn-danger btn-stop" id="stop-btn" hidden>演奏中止</button>
+			<button type="button" class="btn btn-danger btn-stop" onclick="stopRecording(this);" id="stop-btn" hidden>演奏中止</button>
 		</div>
 		<div id="lyrics" class="scroll"> <!-- Display your lyrics here --><br><br>
-			伴奏の種類を選択してスタートします
+			-----伴奏の種類を選択してスタートします-----
 		</div>
+
 	</div> 
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+	<script src="./assets/audio-recorder.js"></script>
 	<script src="./assets/script.js"></script>
+	
 </body>
 </html>
