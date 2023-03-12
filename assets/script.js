@@ -17,6 +17,7 @@ const div4 = document.getElementById("score-div");
 const reBtn = document.getElementById("re-btn");
 const h4 = document.getElementById("h4");
 const score2 = document.getElementById("score");
+const acBtn = document.getElementById("ac");
 
 const songTitles = {
     "song1": "酔いどれ知らず(on-vocal)",
@@ -122,8 +123,22 @@ window.onload = function init() {
     })
     .catch(function() {
       alert('マイクへのアクセスを許可して下さい。');
+      acBtn.removeAttribute("hidden");
+      select.setAttribute("hidden", "hidden");
   });
 };
+
+function getMedia(){
+  navigator.mediaDevices.getUserMedia({audio: true})
+  .then(function(stream) {
+    startUserMedia(stream);
+    select.removeAttribute("hidden");	
+    acBtn.setAttribute("hidden", "hidden");
+  })
+  .catch(function() {
+    alert('マイクへのアクセスを許可して下さい。');
+});
+}
 
 playBtn.addEventListener('click', () => {
     audio.play();
