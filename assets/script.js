@@ -176,11 +176,6 @@ stopBtn.addEventListener('click', () => {
     div4.removeAttribute("hidden");
 });
 
-audio2.addEventListener("play", () => {
-  audio.volume = 0.6;
-  audio.play();
-});
-
 audio.addEventListener('timeupdate', () => {
 const currentTime = audio.currentTime;
 const duration = audio.duration;
@@ -216,13 +211,6 @@ audio.addEventListener("ended", () => {
     audio.currentTime = 0;
     stopBtn.click();
 });
-
-audio2.addEventListener("ended", () => {
-    audio.pause();
-    audio.currentTime = 0;
-    audio2.currentTime = 0;
-});
-
 
 $(document).ready(function(){
     // Play the audio of the selected song
