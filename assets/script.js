@@ -200,6 +200,10 @@ audio.addEventListener("ended", () => {
     stopBtn.click();
 });
 
+audio2.addEventListener("ended", () => {
+    audio.pause();
+});
+
 
 $(document).ready(function(){
     // Play the audio of the selected song
