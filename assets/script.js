@@ -160,6 +160,10 @@ stopBtn.addEventListener('click', () => {
     div4.removeAttribute("hidden");
 });
 
+audio2.addEventListener("play", () => {
+  audio.play();
+});
+
 audio.addEventListener('timeupdate', () => {
 const currentTime = audio.currentTime;
 const duration = audio.duration;
