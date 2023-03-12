@@ -135,7 +135,7 @@ function getMedia(){
     alert('マイクへのアクセスを許可して下さい。');
     getMedia();
 });
-};
+}
 
 playBtn.addEventListener('click', () => {
     audio.play();
