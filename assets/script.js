@@ -100,7 +100,7 @@ window.onload = function init() {
         // Some browsers just don't implement it - return a rejected promise with an error
         // to keep a consistent interface
         if (!getUserMedia) {
-          return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+          return Promise.reject(new Error('このブラウザではご利用になれません。'));
         }
 
         // Otherwise, wrap the call to the old navigator.getUserMedia with a Promise
