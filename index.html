@@ -83,6 +83,7 @@
 			<source src="./assets/songs/song.mp3" type="audio/mpeg">
 		</audio><br>
 		<div>
+            <button type="button" class="btn btn-primary btn-play" id="ac" onclick="getMedia()" hidden>マイクアクセスを許可</button>
 			<button type="button" class="btn btn-primary btn-play" id="play-btn" onclick="startRecording(this);" hidden>スタート</button>
 			<button type="button" class="btn btn-secondary btn-pause" id="pause-btn" hidden>ストップ</button>
 			<button type="button" class="btn btn-danger btn-stop" onclick="stopRecording(this);" id="stop-btn" hidden>演奏中止</button>
