@@ -1,4 +1,5 @@
 const audio = document.getElementById('audio');
+const audio2 = document.getElementById('audio2');
 const lyricsDiv = document.getElementById('lyrics');
 const playBtn = document.getElementById('play-btn');
 const pauseBtn = document.getElementById('pause-btn');
@@ -11,6 +12,11 @@ const author = document.getElementById("author");
 const select = document.getElementById("song-select");
 const music = document.getElementById("music");
 const info = document.getElementById("song-info");
+const div2 = document.getElementById("div2");
+const div4 = document.getElementById("score-div");
+const reBtn = document.getElementById("re-btn");
+const h4 = document.getElementById("h4");
+const score2 = document.getElementById("score");
 
 const songTitles = {
     "song1": "酔いどれ知らず(on-vocal)",
@@ -19,6 +25,93 @@ const songTitles = {
 const songAuthors = {
     "song1": "Kanaria",
     "song2": "Kanaria",
+};
+
+const score = Math.floor( Math.random() * 14 ) + 78;
+
+var audio_context;
+var recorder;
+
+function startUserMedia(stream) {
+  var input = audio_context.createMediaStreamSource(stream);
+  audio_context.resume();
+
+  // Uncomment if you want the audio to feedback directly
+  //input.connect(audio_context.destination);
+  //__log('Input connected to audio context destination.');
+  
+  recorder = new Recorder(input);
+}
+
+function startRecording(button) {
+  recorder && recorder.record();
+  button.disabled = true;
+  button.nextElementSibling.disabled = false;
+}
+
+function stopRecording(button) {
+  recorder && recorder.stop();
+  button.disabled = true;
+  button.previousElementSibling.disabled = false;
+  div2.removeAttribute("hidden");
+  // create WAV download link using audio data blob
+  createDownloadLink();
+  
+  recorder.clear();
+}
+
+function createDownloadLink() {
+  recorder && recorder.exportWAV(function(blob) {
+    var url = URL.createObjectURL(blob);;
+    var au = document.createElement('audio2');
+    var hf = document.createElement('a');
+    
+    au.controls = true;
+    au.src = url;
+    hf.href = url;
+    hf.download = new Date().toISOString() + '.wav';
+    hf.innerHTML = hf.download;
+    audio2.src = url
+  });
+}
+
+window.onload = function init() {
+  try {
+    // webkit shim
+    window.AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (navigator.mediaDevices === undefined) {
+      navigator.mediaDevices = {};
+    }
+    if (navigator.mediaDevices.getUserMedia === undefined) {
+      navigator.mediaDevices.getUserMedia = function(constraints) {
+        // First get ahold of the legacy getUserMedia, if present
+        let getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+        // Some browsers just don't implement it - return a rejected promise with an error
+        // to keep a consistent interface
+        if (!getUserMedia) {
+          return Promise.reject(new Error('getUserMedia is not implemented in this browser'));
+        }
+
+        // Otherwise, wrap the call to the old navigator.getUserMedia with a Promise
+        return new Promise(function(resolve, reject) {
+          getUserMedia.call(navigator, constraints, resolve, reject);
+        });
+      }
+    }
+    window.URL = window.URL || window.webkitURL;
+    
+    audio_context = new AudioContext;
+  } catch (e) {
+    alert('No web audio support in this browser!');
+  }
+  
+  navigator.mediaDevices.getUserMedia({audio: true})
+    .then(function(stream) {
+      startUserMedia(stream);
+    })
+    .catch(function(e) {
+  });
 };
 
 playBtn.addEventListener('click', () => {
@@ -38,17 +131,23 @@ pauseBtn.addEventListener('click', () => {
     playBtn.removeAttribute("hidden");
 });
 
+reBtn.addEventListener('click', () => {
+  location.reload();
+});
+
 stopBtn.addEventListener('click', () => {
     audio.pause();
     progressBar.style.width = '0';
     audio.currentTime = 0;
+    score2.innerHTML = score;
     stopBtn.setAttribute("hidden", "hidden");
-    playBtn.removeAttribute("hidden");
+    playBtn.setAttribute("hidden", "hidden");
     pauseBtn.setAttribute("hidden", "hidden");
     info.setAttribute("hidden", "hidden");
     progress.setAttribute("hidden", "hidden");
-    select.removeAttribute("hidden");
     music.removeAttribute("hidden");
+    h4.removeAttribute("hidden");
+    div4.removeAttribute("hidden");
 });
 
 audio.addEventListener('timeupdate', () => {
@@ -84,14 +183,9 @@ var songs = {
 audio.addEventListener("ended", () => {
     progressBar.style.width = '0';
     audio.currentTime = 0;
-    stopBtn.setAttribute("hidden", "hidden");
-    playBtn.removeAttribute("hidden");
-    pauseBtn.setAttribute("hidden", "hidden");
-    info.setAttribute("hidden", "hidden");
-    progress.setAttribute("hidden", "hidden");
-    select.removeAttribute("hidden");
-    music.removeAttribute("hidden");
+    stopBtn.click();
 });
+
 
 $(document).ready(function(){
     // Play the audio of the selected song
