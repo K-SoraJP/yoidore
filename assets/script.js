@@ -135,6 +135,7 @@ function getMedia(){
     startUserMedia(stream);
     select.removeAttribute("hidden");	
     acBtn.setAttribute("hidden", "hidden");
+    $('#lyrics').innerHTML = "伴奏の種類を選択してください";
   })
   .catch(function() {
     alert('マイクへのアクセスを許可して下さい。');
