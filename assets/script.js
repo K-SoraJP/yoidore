@@ -56,19 +56,33 @@ function stopRecording(button) {
   recorder.clear();
 }
 
+// Initialize Firebase
+const firebaseConfig = {
+  apiKey: "AIzaSyAbqzbuzNehknoZLGWdbPRmVxzZ4EmRymY",
+  authDomain: "karaoke-web-e528e.firebaseapp.com",
+  projectId: "karaoke-web-e528e",
+  storageBucket: "karaoke-web-e528e.appspot.com",
+  messagingSenderId: "148600419627",
+  appId: "1:148600419627:web:e31d929e3baa8c49f4c16e"
+};
+firebase.initializeApp(firebaseConfig);
+
+// Get a reference to Firebase Storage
+var storageRef = firebase.storage().ref();
+
+// Create a download link for the recorded audio
 function createDownloadLink() {
-  recorder && recorder.exportWAV(function(blob) {
-    var url = URL.createObjectURL(blob);;
-    var au = document.createElement('audio2');
-    var hf = document.createElement('a');
-    
-    au.controls = true;
-    au.src = url;
-    hf.href = url;
-    hf.download = new Date().toISOString() + '.wav';
-    hf.innerHTML = hf.download;
-    audio2.src = url
-  });
+    recorder && recorder.exportWAV(function(blob) {
+        var url = URL.createObjectURL(blob);;
+        audio2.src = url;
+        // Create a reference to the file path in Firebase Storage
+        var filePath = 'karaoke-log/' + new Date().toISOString() + '.wav';
+        var fileRef = storageRef.child(filePath);
+
+        // Upload the blob to Firebase Storage
+        fileRef.put(blob).then(function(snapshot) {        
+        })
+    });
 }
 
 window.onload = function init() {
@@ -202,7 +216,6 @@ $(document).ready(function(){
         }
         $('#lyrics').html(html);
     });
-
     // Change the color of the lyrics according to the time difference
     $('#audio').on('timeupdate', function(){
         var audio = $('#audio').get(0);
