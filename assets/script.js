@@ -177,6 +177,7 @@ stopBtn.addEventListener('click', () => {
 });
 
 audio2.addEventListener("play", () => {
+  audio.volume = 0.6;
   audio.play();
 });
 
@@ -218,6 +219,8 @@ audio.addEventListener("ended", () => {
 
 audio2.addEventListener("ended", () => {
     audio.pause();
+    audio.currentTime = 0;
+    audio2.currentTime = 0;
 });
 
 
