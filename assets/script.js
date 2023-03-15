@@ -18,6 +18,12 @@ const reBtn = document.getElementById("re-btn");
 const h4 = document.getElementById("h4");
 const score2 = document.getElementById("score");
 const acBtn = document.getElementById("ac");
+const scBtn = document.getElementById("settingb");
+const sc = document.getElementById("setting");
+const scc = document.getElementById("settingc");
+const vx = document.getElementById("volume-up-btn");
+const vy = document.getElementById("volume-down-btn");
+const vo = document.getElementById("vo");
 
 const songTitles = {
     "song1": "酔いどれ知らず(on-vocal)",
@@ -161,6 +167,52 @@ pauseBtn.addEventListener('click', () => {
 
 reBtn.addEventListener('click', () => {
   location.reload();
+});
+
+vx.addEventListener('click', () => {
+  audio.volume += 0.1;
+  const disv = Math.round(audio.volume * 10)
+  const v = disv-8;
+  const v2 = Math.sign(v)
+
+  if (v2 < 0){
+    vo.innerHTML = v;
+  }
+
+  else if (disv > 9) {
+    vo.innerHTML = "Max";
+  }
+
+  else if (disv < 1) {
+    vo.innerHTML = "Min";
+  }
+  else{
+    vo.innerHTML = "＋" + v;
+
+  }
+});
+
+vy.addEventListener('click', () => {
+  audio.volume -= 0.1;
+  const disv = Math.round(audio.volume * 10)
+  const v = disv-8;
+  const v2 = Math.sign(v)
+
+  if (v < -7) {
+    vo.innerHTML = "Min";
+  }
+  else if (v2 < 0){
+    vo.innerHTML = v;
+  }
+
+  else if (disv > 9) {
+    vo.innerHTML = "Max";
+  }
+
+  else{
+    vo.innerHTML = "＋" + v;
+
+  }
 });
 
 stopBtn.addEventListener('click', () => {
