@@ -87,6 +87,20 @@
 			<button type="button" class="btn btn-primary btn-play" id="play-btn" onclick="startRecording(this);" hidden>スタート</button>
 			<button type="button" class="btn btn-secondary btn-pause" id="pause-btn" hidden>ストップ</button>
 			<button type="button" class="btn btn-danger btn-stop" onclick="stopRecording(this);" id="stop-btn" hidden>演奏中止</button>
+		</div><br>
+		<div id="setting" hidden>
+			<details>
+				<summary>				
+					<span class="summary_inner">
+					音量<span class="icon"></span>
+				</span>
+				</summary>
+				<div class="content">
+				<button class="btn btn-primary btn-play" id="volume-up-btn">＋</button>
+				<h4 id="vo">±0</h4>
+				<button class="btn btn-danger btn-stop" id="volume-down-btn">－</button>
+				</div>
+			</details>
 		</div>
 		<div id="lyrics" class="scroll"> <!-- Display your lyrics here --><br><br>
 			伴奏の種類を選択してスタートします
