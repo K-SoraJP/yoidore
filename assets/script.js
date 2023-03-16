@@ -215,6 +215,18 @@ vy.addEventListener('click', () => {
   }
 });
 
+scBtn.addEventListener('click', () => {
+  sc.removeAttribute("hidden");
+  scc.removeAttribute("hidden");
+  scBtn.setAttribute("hidden", "hidden");
+});
+
+scc.addEventListener('click', () => {
+  sc.setAttribute("hidden", "hidden");
+  scc.setAttribute("hidden", "hidden");
+  scBtn.removeAttribute("hidden");
+});
+
 stopBtn.addEventListener('click', () => {
     audio.pause();
     progressBar.style.width = '0';
