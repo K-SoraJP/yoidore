@@ -25,6 +25,8 @@ const vx = document.getElementById("volume-up-btn");
 const vy = document.getElementById("volume-down-btn");
 const vo = document.getElementById("vo");
 
+audio.volume -= 0.2;
+
 const songTitles = {
     "song1": "酔いどれ知らず(on-vocal)",
     "song2": "酔いどれ知らず",
