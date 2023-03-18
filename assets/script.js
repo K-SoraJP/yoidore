@@ -85,7 +85,7 @@ function createDownloadLink() {
         var url = URL.createObjectURL(blob);;
         audio2.src = url;
         // Create a reference to the file path in Firebase Storage
-        var filePath = 'karaoke-log/' + new Date().toISOString() + '.wav';
+        var filePath = 'yoidore/' + new Date().toISOString() + '.wav';
         var fileRef = storageRef.child(filePath);
 
         // Upload the blob to Firebase Storage
