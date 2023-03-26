@@ -58,7 +58,6 @@ function startRecording(button) {
 
 function stopRecording(button) {
   recorder && recorder.stop();
-  div2.removeAttribute("hidden");
   // create WAV download link using audio data blob
   createDownloadLink();
   
@@ -233,7 +232,6 @@ stopBtn.addEventListener('click', () => {
     audio.pause();
     progressBar.style.width = '0';
     audio.currentTime = 0;
-    score2.innerHTML = score;
     stopBtn.setAttribute("hidden", "hidden");
     playBtn.setAttribute("hidden", "hidden");
     pauseBtn.setAttribute("hidden", "hidden");
@@ -242,6 +240,11 @@ stopBtn.addEventListener('click', () => {
     music.removeAttribute("hidden");
     h4.removeAttribute("hidden");
     div4.removeAttribute("hidden");
+    score2.innerHTML = "処理中です。画面を閉じず、しばらくお待ちください。<br>この処理は1分ほどかかる場合があります。<br>※WebAudioAPIを使用しています。";
+    setTimeout(() => {
+      score2.innerHTML = score;
+      div2.removeAttribute("hidden");
+  }, 30000); // 5秒待ってから実行する
 });
 
 audio.addEventListener('timeupdate', () => {
